@@ -1,4 +1,4 @@
-package FactoryMethodPatternExample.documents;
+package Week1.FactoryMethodPatternExample.documents;
 
 public class PdfDocument implements Document {
     @Override

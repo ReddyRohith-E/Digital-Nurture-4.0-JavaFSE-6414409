@@ -1,6 +1,6 @@
-package FactoryMethodPatternExample;
+package Week1.FactoryMethodPatternExample;
 
-import FactoryMethodPatternExample.documents.*;
+import Week1.FactoryMethodPatternExample.documents.*;
 
 public class FactoryMethodPatternDemo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package SingletonPatternExample;
+package Week1.SingletonPatternExample;
 
 public class LoggerTest {
     public static void main(String[] args) {
