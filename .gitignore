@@ -1,0 +1,151 @@
+# Global ignores
+# This file is used to ignore files and directories that should not be tracked by Git.
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+$RECYCLE.BIN/
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Universal Java/IDE/OS ignores for all subprojects
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.javadoc
+*.hprof
+*.stackdump
+*.out
+*.tmp
+*.swp
+*.swo
+*.bak
+*.backup
+*.orig
+*.rej
+*.ser
+*.swm
+*.ipr
+*.iws
+.idea/
+.project
+.classpath
+.settings/
+target/
+bin/
+build/
+out/
+.gradle/
+.gradle-cache/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Eclipse
+.settings/
+.project
+.classpath
+.cproject
+.pydevproject
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*.swo
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Miscellaneous
+*.env
+.env.*
+*.local
+*.secret
+*.bak
+*.swp
+*.swo
+*.tmp
+*.log
+*.pid
+
+# Coverage reports
+coverage/
+*.lcov
+*.nyc_output/
+.nyc_output/
+coverage-final.json
+coverage-summary.json
+
+# Test output
+test-output/
+test-results/
+*.test.xml
+*.test.json
+
+# IDEs and editors
+*.sublime-workspace
+*.sublime-project
+*.vscode/
+*.code-workspace
+*.kate-swp
+*.swp
+*.swo
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Others
+*.db
+*.sqlite
+*.sqlite3
+*.db3
+*.sdb
+*.tgz
+*.gz
+*.bz2
+*.xz
+
+# Ignore all .gitignore files in subprojects (if you want to keep only this one)
+!**/.gitignore
+
+# End of file
