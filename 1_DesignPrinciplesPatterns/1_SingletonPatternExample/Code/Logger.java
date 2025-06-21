@@ -1,5 +1,3 @@
-package Week1.SingletonPatternExample;
-
 public class Logger {
     private static Logger instance;
 
