@@ -1,4 +1,4 @@
-package documents;
+package docs;
 
 public class ExcelDocumentFactory extends DocumentFactory {
     @Override

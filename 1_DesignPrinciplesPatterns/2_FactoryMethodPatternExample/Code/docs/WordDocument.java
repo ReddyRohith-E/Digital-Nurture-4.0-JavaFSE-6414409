@@ -1,4 +1,4 @@
-package documents;
+package docs;
 
 public class WordDocument implements Document {
     @Override

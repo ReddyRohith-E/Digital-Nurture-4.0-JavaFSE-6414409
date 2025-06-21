@@ -1,5 +1,5 @@
-import documents.*;
-public class FactoryMethodPatternDemo {
+import docs.*;
+public class FactoryMethodPattern {
     public static void main(String[] args) {
         DocumentFactory word = new WordDocumentFactory();
         Document wd = word.createDocument();
