@@ -1,4 +1,3 @@
-
 public class LoggerTest {
     public static void main(String[] args) {
         Logger l1 = Logger.getInstance();
@@ -8,6 +7,5 @@ public class LoggerTest {
         else
             System.out.println("Logger is not a singleton. Different instances were created.");
         l1.log("Log message.");
-
     }
 }
