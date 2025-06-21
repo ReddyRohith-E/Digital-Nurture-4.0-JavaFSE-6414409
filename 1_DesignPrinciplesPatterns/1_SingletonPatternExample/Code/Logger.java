@@ -1,8 +1,7 @@
 public class Logger {
     private static Logger instance;
 
-    private Logger() {
-        // Private constructor to prevent instantiation
+    private Logger() { // To prevent instantiation from outside
         System.out.println("Logger instance created.");
     }
 

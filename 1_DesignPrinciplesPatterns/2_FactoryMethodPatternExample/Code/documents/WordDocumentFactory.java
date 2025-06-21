@@ -1,4 +1,4 @@
-package Week1.FactoryMethodPatternExample.documents;
+package documents;
 
 public class WordDocumentFactory extends DocumentFactory {
     @Override

@@ -1,7 +1,4 @@
-package Week1.FactoryMethodPatternExample;
-
-import Week1.FactoryMethodPatternExample.documents.*;
-
+import documents.*;
 public class FactoryMethodPatternDemo {
     public static void main(String[] args) {
         DocumentFactory word = new WordDocumentFactory();

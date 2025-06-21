@@ -1,5 +1,4 @@
-package Week1.FactoryMethodPatternExample.documents;
-
+package documents;
 public class ExcelDocument implements Document {
     @Override
     public void open() {
