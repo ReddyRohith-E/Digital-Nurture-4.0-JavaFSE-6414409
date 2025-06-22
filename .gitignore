@@ -148,4 +148,5 @@ test-results/
 # Ignore all .gitignore files in subprojects (if you want to keep only this one)
 !**/.gitignore
 
+create_folder_structure.ps1
 # End of file
