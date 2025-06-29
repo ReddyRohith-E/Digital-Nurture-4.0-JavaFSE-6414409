@@ -9,10 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test class for Student model demonstrating the AAA pattern
- * with comprehensive setup and teardown methods
- */
 class StudentTest {
 
     private Student student;
@@ -21,30 +17,22 @@ class StudentTest {
     private String validEmail;
     private double validGpa;
 
-    /**
-     * Setup method - executed before each test
-     */
     @BeforeEach
     void setUp() {
         System.out.println("Setting up Student test data...");
         
-        // Arrange common test data
-        validName = "Alice Johnson";
+        validName = "Rohith Sharma";
         validAge = 21;
-        validEmail = "alice.johnson@university.edu";
+        validEmail = "rohith.sharma@university.edu";
         validGpa = 3.5;
         
-        // Initialize student with valid data
         student = new Student(validName, validAge, validEmail, validGpa);
     }
-    /**
-     * Teardown method - executed after each test
-     */
+
     @AfterEach
     void tearDown() {
         System.out.println("Cleaning up Student test data...");
         
-        // Reset all references
         student = null;
         validName = null;
         validAge = 0;
