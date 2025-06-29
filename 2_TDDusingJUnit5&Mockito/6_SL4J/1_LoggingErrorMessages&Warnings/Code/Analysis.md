@@ -19,13 +19,6 @@ Code/
 - **SLF4J API 1.7.30**: Simple Logging Facade for Java API
 - **Logback Classic 1.2.3**: The logging implementation
 
-## Features Demonstrated
-1. **Basic Logging Levels**: TRACE, DEBUG, INFO, WARN, ERROR
-2. **Parameterized Logging**: Using placeholders for better performance
-3. **Exception Logging**: Logging exceptions with stack traces
-4. **Multiple Appenders**: Console output and file logging
-5. **Log Filtering**: Separate error log file
-
 ## Expected Output
 The application will:
 - Display log messages on the console with timestamps and log levels
