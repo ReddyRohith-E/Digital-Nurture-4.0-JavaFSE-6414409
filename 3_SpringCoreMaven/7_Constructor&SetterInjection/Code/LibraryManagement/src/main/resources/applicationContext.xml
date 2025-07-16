@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+
+    <bean id="bookRepository" class="com.library.repository.BookRepository">
+        <!-- BookRepository uses default constructor, no dependencies -->
+    </bean>
+    
+    
+    <!-- 
+        1. CONSTRUCTOR INJECTION EXAMPLE
+        ===============================
+        This demonstrates constructor injection where BookRepository 
+        is injected through the constructor parameter
+    -->
+    <bean id="bookServiceConstructor" class="com.library.service.BookService">
+        <!-- Constructor argument injection -->
+        <constructor-arg ref="bookRepository" />
+        
+        <!-- Setter injection for service name (mixed injection) -->
+        <property name="serviceName" value="Library Service (Constructor Injection)" />
+    </bean>
+    
+    
+    <!-- 
+        2. SETTER INJECTION EXAMPLE
+        ===========================
+        This demonstrates setter injection where BookRepository 
+        is injected through the setter method
+    -->
+    <bean id="bookServiceSetter" class="com.library.service.BookService">
+        <!-- Default constructor will be used -->
+        
+        <!-- Property injection using setter methods -->
+        <property name="bookRepository" ref="bookRepository" />
+        <property name="serviceName" value="Library Service (Setter Injection)" />
+    </bean>
+    
+    
+    <!-- 
+        3. MIXED INJECTION EXAMPLE
+        ==========================
+        This demonstrates using both constructor and setter injection
+        Repository is injected via constructor, service name via setter
+    -->
+    <bean id="bookServiceMixed" class="com.library.service.BookService">
+        <!-- Constructor argument injection for required dependency -->
+        <constructor-arg ref="bookRepository" />
+        
+        <!-- Setter injection for optional properties -->
+        <property name="serviceName" value="Library Service (Mixed Injection)" />
+    </bean>
+    
+    
+    <!-- 
+        ALTERNATIVE CONFIGURATIONS (for reference)
+        ==========================================
+        These show different ways to configure the same beans
+    -->
+    
+    <!-- Alternative way to define BookRepository with property injection -->
+    <!--
+    <bean id="bookRepositoryAlternative" class="com.library.repository.BookRepository">
+        <property name="dataSource" value="In-Memory Database" />
+    </bean>
+    -->
+    
+    <!-- Constructor injection with index specification -->
+    <!--
+    <bean id="bookServiceIndexed" class="com.library.service.BookService">
+        <constructor-arg index="0" ref="bookRepository" />
+        <property name="serviceName" value="Library Service (Indexed Constructor)" />
+    </bean>
+    -->
+    
+    <!-- Constructor injection with type specification -->
+    <!--
+    <bean id="bookServiceTyped" class="com.library.service.BookService">
+        <constructor-arg type="com.library.repository.BookRepository" ref="bookRepository" />
+        <property name="serviceName" value="Library Service (Typed Constructor)" />
+    </bean>
+    -->
+    
+    <!-- Constructor injection with name specification -->
+    <!--
+    <bean id="bookServiceNamed" class="com.library.service.BookService">
+        <constructor-arg name="bookRepository" ref="bookRepository" />
+        <property name="serviceName" value="Library Service (Named Constructor)" />
+    </bean>
+    -->
+    
+</beans>
