@@ -1,0 +1,155 @@
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ echo "Content in First branch" > branch1.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git branch GitNewBranch
+fatal: not a valid object name: 'master'
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git add branch1.txt
+warning: in the working copy of 'branch1.txt', LF will be replaced by CRLF the next time Git touches it
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git commit -m "Branch-1 initial commit"
+[master (root-commit) 40fbf7f] Branch-1 initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch1.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git branch GitNewBranch
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git branch -a
+  GitNewBranch
+* master
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (GitNewBranch)
+$ echo "Content in GitNewBranch" > branch2.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (GitNewBranch)
+$ echo "Content in GitNewBranch second file" > branch2-file2.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (GitNewBranch)
+$ git add .
+warning: in the working copy of 'branch2-file2.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'branch2.txt', LF will be replaced by CRLF the next time Git touches it
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (GitNewBranch)
+$ git commit -m "Added new files in other branch"
+[GitNewBranch fa4566a] Added new files in other branch
+ 2 files changed, 2 insertions(+)
+ create mode 100644 branch2-file2.txt
+ create mode 100644 branch2.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (GitNewBranch)
+$ git status
+On branch GitNewBranch
+nothing to commit, working tree clean
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (GitNewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git diff master GitNewBranch
+diff --git a/branch2-file2.txt b/branch2-file2.txt
+new file mode 100644
+index 0000000..cc7ce23
+--- /dev/null
++++ b/branch2-file2.txt
+@@ -0,0 +1 @@
++Content in GitNewBranch second file
+diff --git a/branch2.txt b/branch2.txt
+new file mode 100644
+index 0000000..4e1871f
+--- /dev/null
++++ b/branch2.txt
+@@ -0,0 +1 @@
++Content in GitNewBranch
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git difftool master GitNewBranch
+
+This message is displayed because 'diff.tool' is not configured.
+See 'git difftool --tool-help' or 'git help config' for more details.
+'git difftool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+
+Viewing (1/2): 'branch2-file2.txt'
+Launch 'vimdiff' [Y/n]? n
+
+This message is displayed because 'diff.tool' is not configured.
+See 'git difftool --tool-help' or 'git help config' for more details.
+'git difftool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+
+Viewing (2/2): 'branch2.txt'
+Launch 'vimdiff' [Y/n]? n
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global diff.tool p4merge
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global difftool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global difftool.prompt false
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git difftool master GitNewBranch
+The diff tool p4merge is not available as 'C:/Program Files/Perforce/p4merge.exe'
+fatal: external diff died, stopping at branch2-file2.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global difftool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global diff.tool p4merge
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global difftool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git config --global difftool.prompt false
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git difftool master GitNewBranch
+
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git merge GitNewBranch
+Updating 40fbf7f..fa4566a
+Fast-forward
+ branch2-file2.txt | 1 +
+ branch2.txt       | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 branch2-file2.txt
+ create mode 100644 branch2.txt
+
+eredd@Rohith-Enduluri MINGW64 ~/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/3_GitMerging (master)
+$ git log --oneline --graph --decorate
+Updating 40fbf7f..fa4566a
+Fast-forward
+ branch2-file2.txt | 1 +
+ branch2.txt       | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 branch2-file2.txt
+ create mode 100644 branch2.txt
+* fa4566a (HEAD -> master, GitNewBranch) Added new files in other branch
+* 40fbf7f Branch-1 initial commit
+Deleted branch GitNewBranch (was fa4566a).
+On branch master
+nothing to commit, working tree clean
