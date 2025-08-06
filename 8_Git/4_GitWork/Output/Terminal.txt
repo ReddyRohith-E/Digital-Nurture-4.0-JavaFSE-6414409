@@ -1,0 +1,56 @@
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git> cd "c:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork"
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> ^C
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git init
+Initialized empty Git repository in C:/Users/eredd/Desktop/Digital-Nurture-4.0-JavaFSE-6414409/8_Git/4_GitWork/.git/
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git checkout -b GitWork
+Switched to a new branch 'GitWork'
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git status
+On branch GitWork
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git add hello.xml
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git commit -m "Add hello.xml in GitWork branch"
+[GitWork (root-commit) 883eefa] Add hello.xml in GitWork branch
+ 1 file changed, 5 insertions(+)
+ create mode 100644 hello.xml
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git branch
+* GitWork
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git checkout --orphan master
+Switched to a new branch 'master'
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git reset --hard
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git add hello.xml
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git commit -m "Add hello.xml in master branch"
+[master (root-commit) 85f41ba] Add hello.xml in master branch
+ 1 file changed, 5 insertions(+)
+ create mode 100644 hello.xml
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git log --oneline --graph --decorate --all
+* 85f41ba (HEAD -> master) Add hello.xml in master branch
+* 883eefa (GitWork) Add hello.xml in GitWork branch
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork> git diff master GitWork
+diff --git a/hello.xml b/hello.xml
+index 53c700d..9119947 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <greeting>
+-    <message>Hello from Master branch</message>
+-    <author>Master Branch User</author>
++    <message>Hello from GitWork branch</message>
++    <author>GitWork Branch User</author>
+ </greeting>
+PS C:\Users\eredd\Desktop\Digital-Nurture-4.0-JavaFSE-6414409\8_Git\4_GitWork>

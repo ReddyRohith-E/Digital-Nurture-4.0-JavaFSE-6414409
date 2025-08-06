@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<greeting>
+    <message>Hello from Master branch</message>
+    <author>Master Branch User</author>
+    <message>Hello from GitWork branch</message>
+    <author>GitWork Branch User</author>
+</greeting>
